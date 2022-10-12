@@ -14,19 +14,7 @@ export default {
         type: 'text'
       }
     },
-    maxWidth: {
-      control: {
-        type: 'number'
-      }
-    },
   }
 } as Meta<ButtonProps>
 
 export const Default: StoryObj<ButtonProps> = {};
-
-export const MaxWidth: StoryObj<ButtonProps> = {
-  args: {
-    children: "Log in",
-    maxWidth: 500,
-  }
-};

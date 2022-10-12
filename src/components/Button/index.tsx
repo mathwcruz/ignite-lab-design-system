@@ -1,17 +1,15 @@
-import { ReactNode } from "react";
-import clsx from "clsx";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  maxWidth?: number;
+  className?: string;
 }
 
-export const Button = ({ children, maxWidth }: ButtonProps) => {
+export const Button = ({ children, className, ...props }: ButtonProps) => {
   return (
     <button
-      className={`py-4 px-3 bg-cyan-500 rounded text-sm w-full transition-colors focus:ring-2 ring-gray-100 hover:bg-cyan-300 font-semibold text-black ${
-        typeof maxWidth === 'number' ? `max-w-[${String(maxWidth)}px]` : null
-      }`}
+    {...props}
+      className={`py-3 px-4 bg-cyan-500 rounded text-sm w-full transition-colors focus:ring-2 ring-gray-100 hover:bg-cyan-300 font-semibold text-black ${className}`}
     >
       {children}
     </button>
